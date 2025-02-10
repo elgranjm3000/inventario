@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "controlInventario",
+    "slug": "controlInventario",
+    "scheme": "exp+controlInventario",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.elgranjm.controlInventario"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "package": "com.elgranjm.controlInventario"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-dev-client"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "70312e24-8d27-41b6-b573-091cc16db20e"
+      }
+    },
+    "owner": "elgranjm"
+  }
+}
