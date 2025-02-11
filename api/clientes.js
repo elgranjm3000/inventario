@@ -69,3 +69,40 @@ export const agregarCliente = async (nombre, telefono, email, direccion) => {
       return [];
     }
   };
+
+  export const obtenerClientePorId = async (id) => {
+    try {
+      const db = await openDatabase();
+      const resultado = await db.getFirstAsync(
+        `SELECT 
+          id, 
+          nombre, 
+          telefono, 
+          email, 
+          direccion 
+        FROM clientes 
+        WHERE id = ?;`,
+        [id]
+      );
+  
+      if (resultado) {
+        const cliente = {
+          id: resultado.id.toString(),
+          nombre: resultado.nombre || "",
+          telefono: resultado.telefono || "",
+          email: resultado.email || "",
+          direccion: resultado.direccion || "",
+        };
+  
+        console.log("📋 Cliente obtenido:", cliente);
+        return cliente;
+      } else {
+        console.log("❌ Cliente no encontrado");
+        return null;
+      }
+    } catch (error) {
+      console.error("❌ Error al obtener cliente por ID:", error);
+      return null;
+    }
+  };
+  
